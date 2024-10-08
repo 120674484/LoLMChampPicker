@@ -6,11 +6,9 @@ class HeroSelector(QMainWindow):
         self.init_ui()
     def init_ui(self):
         self.setWindowTitle('英雄联盟手游排位赛')
-        self.resize(800, 600)
         main_layout = QVBoxLayout()
         label_layout = QHBoxLayout()
         self.label = QLabel()
-        self.label.setText("")
         self.label.setStyleSheet("font-size: 36px;")
         label_layout.addStretch(1)
         label_layout.addWidget(self.label)
@@ -57,7 +55,7 @@ class HeroSelector(QMainWindow):
         heroes = ["赛娜", "布里茨", "提莫", "阿利斯塔", "奥莉安娜", "迦娜", "墨菲特", "蕾欧娜", "索拉卡"]
         self.label.setText(random.choice(heroes))
 if __name__ == '__main__':
-    app = QApplication([])
+    app = QApplication()
     window = HeroSelector()
     window.showMaximized()
     app.exec()
